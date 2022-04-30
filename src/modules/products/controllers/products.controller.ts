@@ -9,6 +9,7 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ResponseModel } from 'src/utils/responseModel';
 import { CreateProductDto } from '../dtos/products/create-product.dto';
 import { UpdateProductDto } from '../dtos/products/update-product.dto';
@@ -19,11 +20,13 @@ interface IGetProducts {
   offset?: number;
   brand: string;
 }
-
+@ApiTags('products')
 @Controller('products')
 export class ProductsController {
   constructor(private productService: ProductsService) {}
+
   @Get()
+  @ApiOperation({ summary: 'List of products' })
   @HttpCode(HttpStatus.ACCEPTED)
   getAll(@Query() query: IGetProducts) {
     const products = this.productService.findAll();

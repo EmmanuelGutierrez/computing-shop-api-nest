@@ -7,10 +7,12 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { CreateCategoryDto } from '../dtos/categories/create-category.dto';
 import { UpdateCategoryDto } from '../dtos/categories/update-category.dto';
 import { CategoriesService } from '../services/categories.service';
 
+@ApiTags('categories')
 @Controller('categories')
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
