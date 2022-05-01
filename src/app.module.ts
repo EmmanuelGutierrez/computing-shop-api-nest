@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import * as Joi from 'joi';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -13,6 +12,8 @@ import { UsersModule } from './modules/users/users.module';
 import { DatabaseModule } from './database/database.module';
 import { enviroments } from './enviroments';
 import { config } from './config/config';
+import * as Joi from 'joi';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
