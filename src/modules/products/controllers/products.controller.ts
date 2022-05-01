@@ -10,7 +10,7 @@ import {
   Query,
 } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { ResponseModel } from 'src/utils/responseModel';
+import { ResponseModel } from '../../../utils/ResponseModel';
 import { CreateProductDto } from '../dtos/products/create-product.dto';
 import { UpdateProductDto } from '../dtos/products/update-product.dto';
 import { ProductsService } from '../services/products.service';
