@@ -22,14 +22,20 @@ import * as Joi from 'joi';
       isGlobal: true,
       validationSchema: Joi.object({
         API_KEY: Joi.string().required(),
-        DATABASE_NAME: Joi.string().required(),
+        DB_NAME: Joi.string().required(),
+        DB_LOCAL: Joi.string().required(),
+        DB_PORT: Joi.string().required(),
+        DB_HOST: Joi.string().required(),
+        DB_USER: Joi.string().required(),
+        DB_PASSWORD: Joi.string().required(),
+        DB_CONNECTION: Joi.string().required(),
       }),
     }),
     ProductsModule,
     UsersModule,
     DatabaseModule,
   ],
-  controllers: [AppController, ProductsController, UsersController],
-  providers: [AppService, ProductsService, UsersService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

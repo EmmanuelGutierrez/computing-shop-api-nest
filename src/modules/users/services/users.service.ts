@@ -42,12 +42,12 @@ export class UsersService {
     return `This action removes a #${id} user`;
   }
 
-  getOrderByUser(id: string): Order {
+  async getOrderByUser(id: string) {
     const user = this.findOne(id);
     return {
       date: new Date(),
       user,
-      products: this.productService.findAll(),
+      products: await this.productService.findAll(),
     };
   }
 }

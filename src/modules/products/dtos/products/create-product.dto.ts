@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import {
   IsNotEmpty,
   IsNumber,
@@ -9,6 +10,7 @@ import {
 export class CreateProductDto {
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   readonly title: string;
 
   @IsString()
@@ -27,5 +29,5 @@ export class CreateProductDto {
 
   @IsUrl()
   @IsNotEmpty()
-  readonly image: string;
+  readonly images: string;
 }
